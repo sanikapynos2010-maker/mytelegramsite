@@ -1,45 +1,59 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="uk">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Мій Telegram сайт</title>
-
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #111827;
-            color: white;
-            text-align: center;
-        }
-
-        .container {
-            padding: 40px 20px;
-        }
-
-        h1 {
-            font-size: 32px;
-        }
-
-        button {
-            padding: 15px 25px;
-            border: none;
-            border-radius: 12px;
-            font-size: 18px;
-            cursor: pointer;
-        }
-    </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta name="theme-color" content="#0b1020">
+<title>Brainrot Battle</title>
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+<style>
+:root{--bg:#080d19;--panel:#111827;--panel2:#182235;--line:#273247;--blue:#3267c8;--blue2:#4ca0ff;--text:#f4f7ff;--muted:#94a3b8;--gold:#ffd44f}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at top,#17243d 0,#080d19 55%);color:var(--text);font-family:system-ui,-apple-system,Segoe UI,Arial,sans-serif;min-height:100vh}
+button{font:inherit;color:inherit;border:0;cursor:pointer} .app{max-width:560px;margin:auto;min-height:100vh;padding:18px 16px 92px}
+.top{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px}.brand{display:flex;align-items:center;gap:11px}.logo{width:46px;height:46px;border-radius:14px;background:linear-gradient(145deg,#4aa5ff,#294ca4);display:grid;place-items:center;font-size:24px;box-shadow:0 7px 24px #2460c044}.brand h1{font-size:20px;margin:0;letter-spacing:.2px}.brand p{font-size:12px;color:var(--muted);margin:2px 0 0}.pill{background:#172237;border:1px solid #293a58;border-radius:99px;padding:9px 12px;font-size:12px;color:#b8d7ff}
+.profile{padding:16px;background:linear-gradient(135deg,#151e2f,#101725);border:1px solid #283247;border-radius:18px;margin-bottom:16px}.profiletop{display:flex;gap:12px;align-items:center}.avatar{height:58px;width:58px;border-radius:16px;background:linear-gradient(145deg,#d6e5ff,#315da9);display:grid;place-items:center;font-size:30px}.name{font-weight:800;font-size:17px}.handle{font-size:12px;color:var(--muted);margin-top:3px}.balance{display:flex;justify-content:space-between;align-items:center;margin-top:16px;background:#0d1422;border:1px dashed #344158;padding:12px 14px;border-radius:12px}.balance small{color:var(--muted)}.coins{font-weight:900;font-size:22px;color:#fff}.coins span{color:var(--gold)}
+.section-title{font-size:13px;color:#9fb0c9;text-transform:uppercase;letter-spacing:1.5px;margin:20px 4px 10px;font-weight:800}.nav{display:grid;gap:9px}.navbtn{display:flex;align-items:center;gap:14px;text-align:left;width:100%;padding:15px 16px;border-radius:15px;background:transparent;border:1px solid transparent;font-size:16px;font-weight:850;letter-spacing:.5px}.navbtn .ico{width:28px;text-align:center;font-size:21px;color:var(--blue2)}.navbtn.active{background:linear-gradient(110deg,#376dc9,#2a529f);box-shadow:0 8px 22px #1e56b333}.navbtn.active .ico{color:#a9d6ff}.view{margin-top:20px;background:linear-gradient(145deg,#141e30,#0f1725);border:1px solid #273247;border-radius:18px;padding:18px}.view h2{font-size:22px;margin:0 0 6px}.sub{color:var(--muted);font-size:13px;line-height:1.5}.hero{margin:14px 0;padding:20px 14px;border-radius:16px;text-align:center;background:radial-gradient(circle at 50% 0,#254a85,#111b2d 70%);border:1px solid #304567}.heroemoji{font-size:54px}.hero strong{display:block;font-size:28px;margin:4px 0}.primary{background:linear-gradient(110deg,#3980ee,#2c59b2);padding:14px 16px;border-radius:13px;font-weight:850;width:100%;box-shadow:0 7px 18px #2358b533}.secondary{background:#202d43;border:1px solid #33435d;padding:12px;border-radius:12px;font-weight:750;width:100%}.twocol{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}.stat{padding:13px;background:#0c1422;border:1px solid #273247;border-radius:12px}.stat small{display:block;color:var(--muted);font-size:11px}.stat b{display:block;margin-top:5px;font-size:18px}.item{display:flex;justify-content:space-between;gap:10px;align-items:center;padding:13px 0;border-bottom:1px solid #263247}.item:last-child{border-bottom:0}.item b{display:block;font-size:14px}.item small{color:var(--muted);font-size:12px}.buy{background:#254f96;padding:9px 12px;border-radius:10px;font-size:12px;font-weight:800;white-space:nowrap}.buy:disabled{opacity:.45}.notice{margin-top:12px;color:#8fa6c6;font-size:11px;line-height:1.5}.bottom{position:fixed;bottom:0;left:0;right:0;background:#0a101eeF;backdrop-filter:blur(15px);border-top:1px solid #253047;padding:10px 16px calc(10px + env(safe-area-inset-bottom));display:flex;justify-content:center}.bottominner{width:100%;max-width:528px;display:flex;justify-content:space-around}.bottom button{background:none;color:#8294b0;font-size:11px;display:grid;gap:3px;justify-items:center}.bottom button span{font-size:19px}.bottom button.active{color:#73b6ff}
+@media(min-width:560px){.app{padding-top:28px}.nav{grid-template-columns:1fr 1fr}.navbtn{font-size:14px}}
+</style>
 </head>
-
 <body>
-    <div class="container">
-        <h1>👋 Привіт!</h1>
-        <p>Мій Telegram Mini App</p>
-
-        <button onclick="alert('Працює!')">
-            Натисни мене
-        </button>
-    </div>
-</body>
-</html>
+<div class="app">
+<header class="top"><div class="brand"><div class="logo">⚔️</div><div><h1>Brainrot Battle</h1><p>MINI APP · SEASON 1</p></div></div><div class="pill">● ONLINE</div></header>
+<section class="profile"><div class="profiletop"><div class="avatar" id="avatar">👾</div><div><div class="name" id="playerName">Гравець</div><div class="handle" id="playerHandle">@telegram_player</div></div></div><div class="balance"><div><small>ТВІЙ БАЛАНС</small><div class="coins"><span>◉</span> <b id="coins">0</b></div></div><div style="text-align:right"><small>РІВЕНЬ</small><div class="coins" style="font-size:18px">⭐ <b id="level">1</b></div></div></div></section>
+<div class="section-title">Ігрове меню</div>
+<nav class="nav" id="nav">
+<button class="navbtn active" data-page="home"><span class="ico">⌂</span> ГОЛОВНА</button>
+<button class="navbtn" data-page="upgrade"><span class="ico">◉</span> АПГРЕЙДЕР</button>
+<button class="navbtn" data-page="battle"><span class="ico">🛡️</span> БАТЛ</button>
+<button class="navbtn" data-page="dice"><span class="ico">🎲</span> ДАЙСИ</button>
+<button class="navbtn" data-page="crash"><span class="ico">🚀</span> КРАШ</button>
+<button class="navbtn" data-page="quests"><span class="ico">☑</span> КВЕСТИ</button>
+<button class="navbtn" data-page="giveaways"><span class="ico">🏆</span> РОЗІГРИ</button>
+<button class="navbtn" data-page="faq"><span class="ico">❔</span> FAQ</button>
+<button class="navbtn" data-page="bonus"><span class="ico">🎁</span> БОНУСИ</button>
+</nav>
+<main class="view" id="view"></main>
+<div class="notice">Демо-версія Brainrot Battle. Монети зберігаються на цьому пристрої. Онлайн-батли, розіграші та синхронізація між пристроями потребують серверної частини.</div>
+</div>
+<div class="bottom"><div class="bottominner"><button class="active" data-page="home"><span>⌂</span>Головна</button><button data-page="upgrade"><span>⚡</span>Апгрейд</button><button data-page="quests"><span>☑</span>Квести</button><button data-page="bonus"><span>🎁</span>Бонуси</button></div></div>
+<script>
+const tg=window.Telegram?.WebApp; try{tg?.ready();tg?.expand();tg?.setHeaderColor?.('#0b1020');tg?.setBackgroundColor?.('#080d19')}catch(e){}
+const user=tg?.initDataUnsafe?.user;
+if(user){document.getElementById('playerName').textContent=[user.first_name,user.last_name].filter(Boolean).join(' ')||'Гравець';document.getElementById('playerHandle').textContent=user.username?'@'+user.username:'Telegram гравець';if(user.photo_url)document.getElementById('avatar').innerHTML=`<img src="${user.photo_url}" style="width:100%;height:100%;object-fit:cover;border-radius:16px">`}
+let state;try{state=JSON.parse(localStorage.getItem('bb_state'))}catch(e){};if(!state)state={coins:0,level:1,clickPower:1,claimed:false,quests:[]};
+function save(){localStorage.setItem('bb_state',JSON.stringify(state));document.getElementById('coins').textContent=state.coins.toLocaleString('uk-UA');document.getElementById('level').textContent=state.level}
+const pages={
+home:()=>`<h2>🏠 Головна</h2><div class="sub">Ласкаво просимо на арену, бійцю. Збирай монети та прокачуйся!</div><div class="hero"><div class="heroemoji">🧠⚡</div><strong>+${state.clickPower} монет</strong><div class="sub">за кожне натискання</div><button class="primary" id="earn" style="margin-top:16px">ЗАРОБИТИ МОНЕТИ</button></div><div class="twocol"><div class="stat"><small>ТВОЇ МОНЕТИ</small><b>🟡 ${state.coins.toLocaleString('uk-UA')}</b></div><div class="stat"><small>ПОТОЧНИЙ РІВЕНЬ</small><b>⭐ ${state.level}</b></div></div>`,
+upgrade:()=>`<h2>⚡ Апгрейдер</h2><div class="sub">Покращуй силу кліку, щоб заробляти більше монет.</div><div class="item"><div><b>💪 Сила кліку</b><small>Зараз: +${state.clickPower} монет · Ціна: ${state.level*25}</small></div><button class="buy" id="upgrade" ${state.coins<state.level*25?'disabled':''}>Покращити</button></div><div class="item"><div><b>⭐ Новий рівень</b><small>Вартість: ${state.level*100} монет</small></div><button class="buy" id="levelup" ${state.coins<state.level*100?'disabled':''}>Підвищити</button></div>`,
+battle:()=>`<h2>🛡️ Батл</h2><div class="hero"><div class="heroemoji">⚔️</div><strong>Арена битв</strong><div class="sub">Тренувальний бій проти комп'ютера. Спробуй удачу!</div><button class="primary" id="battle" style="margin-top:14px">ЗНАЙТИ СУПЕРНИКА</button></div><div class="sub">Це демо-бій. Для реальних PvP-битв потрібен сервер.</div>`,
+dice:()=>`<h2>🎲 Дайси</h2><div class="sub">Вгадай число на кубику. Правильна відповідь дає 5 монет.</div><div class="hero"><div class="heroemoji" id="die">🎲</div><div class="twocol"><button class="secondary" data-guess="1">1–3</button><button class="secondary" data-guess="2">4–6</button></div><div class="sub" id="diceResult" style="margin-top:12px">Обери діапазон</div></div>`,
+crash:()=>`<h2>🚀 Краш</h2><div class="sub">Демо-гра на множник: забери виграш до того, як раунд завершиться.</div><div class="hero"><div class="heroemoji">🚀</div><strong id="mult">x1.00</strong><button class="primary" id="crashStart">ПОЧАТИ РАУНД</button><div class="sub" id="crashResult" style="margin-top:10px">Тренувальний режим без ставок</div></div>`,
+quests:()=>`<h2>☑ Квести</h2><div class="sub">Виконуй щоденні завдання та забирай нагороди.</div><div class="item"><div><b>🟡 Перші монети</b><small>Натисни «Заробити монети» на головній</small></div><button class="buy" id="quest1" ${state.quests.includes('q1')?'disabled':''}>${state.quests.includes('q1')?'Виконано':'+10'}</button></div><div class="item"><div><b>⚡ Розвиток</b><small>Зроби перше покращення</small></div><button class="buy" id="quest2" ${state.quests.includes('q2')?'disabled':''}>${state.quests.includes('q2')?'Виконано':'+20'}</button></div>`,
+giveaways:()=>`<h2>🏆 Розіграші</h2><div class="hero"><div class="heroemoji">🎁</div><strong>Скоро!</strong><div class="sub">Розіграші призів з'являться після підключення серверної частини. Тут поки немає активних розіграшів.</div></div>`,
+faq:()=>`<h2>❔ Допомога</h2><div class="item"><div><b>Як заробляти монети?</b><small>Відкрий «Головна» та натискай кнопку заробітку.</small></div></div><div class="item"><div><b>Як прокачатися?</b><small>Витрачай монети в розділі «Апгрейдер».</small></div></div><div class="item"><div><b>Чи синхронізуються монети?</b><small>Ні, зараз вони зберігаються лише у браузері цього пристрою.</small></div></div>`,
+bonus:()=>`<h2>🎁 Бонуси</h2><div class="hero"><div class="heroemoji">🎁</div><strong>Щоденний бонус</strong><div class="sub">Забери 25 монет у демо-версії.</div><button class="primary" id="bonus" style="margin-top:14px" ${state.claimed?'disabled':''}>${state.claimed?'БОНУС ВЖЕ ЗАБРАНО':'ЗАБРАТИ +25'}</button></div>`
+};
+function render(page='home'){document.querySelectorAll('[data-page]').forEach(b=>b.classList.toggle('active',b.dataset.page===page));document.getElementById('view').innerHTML=pages[page]();document.getElementById('earn')?.addEventListener('click',()=>{state.coins+=state.clickPower;save();render('home')});document.getElementById('upgrade')?.addEventListener('click',()=>{let c=state.level*25;if(state.coins>=c){state.coins-=c;state.clickPower++;state.level++;save();render('upgrade')}});document.getElementById('levelup')?.addEventListener('click',()=>{let c=state.level*100;if(state.coins>=c){state.coins-=c;state.level++;save();render('upgrade')}});document.getElementById('battle')?.addEventListener('click',()=>{let win=Math.random()>.45;if(win){state.coins+=10;save()}alert(win?'Перемога! +10 монет 🏆':'Цього разу суперник переміг. Спробуй ще!');render('battle')});document.querySelectorAll('[data-guess]').forEach(b=>b.addEventListener('click',()=>{let n=1+Math.floor(Math.random()*6),win=(b.dataset.guess==='1'?n<=3:n>=4);document.getElementById('die').textContent=['⚀','⚁','⚂','⚃','⚄','⚅'][n-1];document.getElementById('diceResult').textContent=`Випало ${n}. `+(win?'Вгадав! +5 монет':'Не вгадав — спробуй ще');if(win)state.coins+=5;save()}));document.getElementById('crashStart')?.addEventListener('click',()=>{let m=(1+Math.random()*3).toFixed(2);document.getElementById('mult').textContent='x'+m;document.getElementById('crashResult').textContent='Раунд завершився. Це демонстрація без ставок.'});document.getElementById('bonus')?.addEventListener('click',()=>{if(!state.claimed){state.coins+=25;state.claimed=true;save();render('bonus')}});document.getElementById('quest1')?.addEventListener('click',()=>{state.quests.push('q1');state.coins+=10;save();render('quests')});document.getElementById('quest2')?.addEventListener('click',()=>{state.quests.push('q2');state.coins+=20;save();render('quests')})}
+document.querySelectorAll('[data-page]').forEach(b=>b.addEventListener('click',()=>render(b.dataset.page)));save();render();
+</script>
+</body></html>
